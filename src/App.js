@@ -1,40 +1,13 @@
-import React from "react";
-import videojs from "video.js";
-import Video from "./components/Video";
+// @flow
 
-const App = () => {
-  const playerRef = React.useRef(null);
+import * as React from "react";
+import Player from "./components/Video";
 
-  const videoJsOptions = {
-    autoplay: true,
-    controls: true,
-    responsive: true,
-    fluid: true,
-    sources: [
-      {
-        src: "Live_at_the_Comedy_Store_HD.mp4",
-        type: "video/mp4",
-      },
-    ],
-  };
-
-  const handlePlayerReady = (player) => {
-    playerRef.current = player;
-
-    // You can handle player events here, for example:
-    player.on("waiting", () => {
-      videojs.log("player is waiting");
-    });
-
-    player.on("dispose", () => {
-      videojs.log("player will dispose");
-    });
-  };
-
+const App = (): React$Element<React$FragmentType> => {
   return (
     <>
       <div>Rest of app here</div>
-      <Video options={videoJsOptions} onReady={handlePlayerReady} />
+      <Player />
       <div>Rest of app here</div>
     </>
   );

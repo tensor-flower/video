@@ -1,0 +1,15 @@
+[declarations]
+<PROJECT_ROOT>/node_modules/.*
+[ignore]
+
+[include]
+src
+[libs]
+
+[lints]
+all=warn
+untyped-type-import=error
+sketchy-null-bool=off
+[options]
+
+[strict]
